@@ -5,6 +5,9 @@ class AppState extends ChangeNotifier {
   UserDto? user;
   int? selectedStandId;
 
+  //TODO: make better?
+  AppState({this.user, this.selectedStandId});
+
   void setUser(UserDto newUser) {
     user = newUser;
     notifyListeners();

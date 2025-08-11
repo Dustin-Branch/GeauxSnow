@@ -1,11 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:geaux_snow/models/app_state.dart';
+import 'package:geaux_snow/models/user.dart';
 import 'package:geaux_snow/profile/profile.dart';
 import 'package:provider/provider.dart';
 
 void main() {
   runApp(
-    ChangeNotifierProvider(create: (_) => AppState(), child: const MyApp()),
+    //TODO: should determine login state and pick what to display and how to set AppState
+    ChangeNotifierProvider(
+      create: (_) => AppState(
+        user: UserDto(id: '1', name: 'John Doe', email: 'jd@example.com'),
+      ),
+      child: const MyApp(),
+    ),
   );
 }
 
