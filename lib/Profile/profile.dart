@@ -1,38 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:geaux_snow/Profile/profile_list.dart';
-import 'package:geaux_snow/Profile/profile_picture.dart';
-import 'package:geaux_snow/Profile/user_name_email.dart';
+import 'package:provider/provider.dart';
+import 'package:geaux_snow/models/app_state.dart';
+import 'package:geaux_snow/profile/profile_list.dart';
+import 'package:geaux_snow/profile/profile_picture.dart';
+import 'package:geaux_snow/profile/user_name_email.dart';
 
-class UserDto {
-  final String id;
-  final String name; //TODO: implement NameDto concept
-  final String email;
-
-  UserDto({required this.id, required this.name, required this.email});
-}
-
-class ProfilePage extends StatefulWidget {
+class ProfilePage extends StatelessWidget {
   const ProfilePage({super.key});
 
   @override
-  State<ProfilePage> createState() => _ProfilePageState();
-}
-
-class _ProfilePageState extends State<ProfilePage> {
-  UserDto? _user;
-
-  @override
-  void initState() {
-    super.initState();
-
-    //TODO: implement backend command to get user
-    setState(() {
-      _user = UserDto(id: '1', name: 'John Doe', email: 'jd@example.com');
-    });
-  }
-
-  @override
   Widget build(BuildContext context) {
+    final user = context.watch<AppState>().user;
+
     return Scaffold(
       appBar: AppBar(
         title: Text('Profile'),
@@ -48,17 +27,15 @@ class _ProfilePageState extends State<ProfilePage> {
                 Padding(
                   padding: const EdgeInsets.only(left: 15),
                   child: UserNameEmail(
-                    name: _user != null ? _user!.name : 'Loading...',
-                    email: _user != null ? _user!.email : 'Loading...',
+                    name: user != null ? user.name : 'Loading...',
+                    email: user != null ? user.email : 'Loading...',
                   ),
                 ),
               ],
             ),
           ),
-          Padding(
-            padding: const EdgeInsets.only(top: 8.0),
-            child: Expanded(child: ProfileList()),
-          ),
+          const SizedBox(height: 8),
+          Expanded(child: ProfileList()),
         ],
       ),
     );
