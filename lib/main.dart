@@ -1,8 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:geaux_snow/Profile/profile.dart';
+import 'package:geaux_snow/models/stand.dart';
+import 'package:provider/provider.dart';
 
 void main() {
-  runApp(const MyApp());
+  // default starting stand
+  final selectedStandProvider = SelectedStandProvider();
+  selectedStandProvider.setSelectedStand(StandDto(id: 1, name: 'Test Stand'));
+
+  runApp(
+    ChangeNotifierProvider(
+      create: (_) => selectedStandProvider,
+      child: const MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -91,7 +102,13 @@ class _MyHomePageState extends State<MyHomePage> {
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         // Here we take the value from the MyHomePage object that was created by
         // the App.build method, and use it to set our appbar title.
-        title: Text(widget.title),
+        title: Consumer<SelectedStandProvider>(
+          builder: (context, standProvider, child) {
+            final standName =
+                standProvider.selectedStand?.name ?? 'No Stand Selected';
+            return Text(standName);
+          },
+        ),
         actions: [
           IconButton(
             icon: const Icon(Icons.person),
