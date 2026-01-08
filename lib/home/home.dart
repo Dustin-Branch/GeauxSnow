@@ -3,6 +3,7 @@ import 'package:geaux_snow/models/stand.dart';
 import 'package:provider/provider.dart';
 
 import '../profile/profile.dart';
+import 'select_stand.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key, required this.title});
@@ -14,14 +15,14 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
-
+  // Dummy list of stands
+  final List<StandDto> _dummyStands = [
+    StandDto(id: 1, name: 'Downtown Stand'),
+    StandDto(id: 2, name: 'Mall Stand'),
+    StandDto(id: 3, name: 'Park Stand'),
+    StandDto(id: 4, name: 'University Stand'),
+    StandDto(id: 5, name: 'Stadium Stand'),
+  ];
   void _openProfilePage() {
     Navigator.push(
       context,
@@ -30,38 +31,11 @@ class _HomePageState extends State<HomePage> {
   }
 
   void _selectStand() {
-    showModalBottomSheet(
-      context: context,
-      isScrollControlled: true,
-      enableDrag: false,
-      isDismissible: false,
-      shape: const RoundedRectangleBorder(
-        borderRadius: BorderRadius.vertical(top: Radius.circular(24)),
-      ),
-      builder: (context) => SizedBox(
-        height: MediaQuery.of(context).size.height,
-        child: Stack(
-          children: [
-            Center(
-              child: Text(
-                'Select a Stand',
-                style: const TextStyle(
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-            ),
-            Positioned(
-              top: 16,
-              right: 16,
-              child: IconButton(
-                icon: const Icon(Icons.close),
-                tooltip: 'Close',
-                onPressed: () => Navigator.of(context).pop(),
-              ),
-            ),
-          ],
-        ),
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) => SelectStand(stands: _dummyStands),
+        fullscreenDialog: true,
       ),
     );
   }
@@ -112,19 +86,8 @@ class _HomePageState extends State<HomePage> {
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text('You have pushed the button this many times:'),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headlineMedium,
-            ),
-          ],
+          children: <Widget>[const Text('Hello Dustin!')],
         ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
       ),
     );
   }
