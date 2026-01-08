@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:geaux_snow/models/stand.dart';
+import 'package:geaux_snow/models/user.dart';
 import 'package:provider/provider.dart';
 
 import '../profile/profile.dart';
@@ -15,7 +16,6 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  // Dummy list of stands
   final List<StandDto> _dummyStands = [
     StandDto(id: 1, name: 'Downtown Stand'),
     StandDto(id: 2, name: 'Mall Stand'),
@@ -47,9 +47,8 @@ class _HomePageState extends State<HomePage> {
         backgroundColor: Colors.white,
         centerTitle: true,
         title: Consumer<SelectedStandProvider>(
-          builder: (context, standProvider, child) {
-            final standName =
-                standProvider.selectedStand?.name ?? 'Find a Stand';
+          builder: (context, value, child) {
+            final standName = value.selectedStand?.name ?? 'Find a Stand';
             return TextButton(
               style: TextButton.styleFrom(
                 backgroundColor: Colors.grey.shade200,
@@ -86,7 +85,12 @@ class _HomePageState extends State<HomePage> {
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[const Text('Hello Dustin!')],
+          children: <Widget>[
+            Consumer<LoggedInUserProvider>(
+              builder: (context, value, child) =>
+                  Text('Hello, ${value.user?.name ?? 'Guest'}!'),
+            ),
+          ],
         ),
       ),
     );

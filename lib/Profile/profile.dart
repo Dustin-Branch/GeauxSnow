@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:geaux_snow/models/user.dart';
 import 'package:provider/provider.dart';
-import 'package:geaux_snow/models/app_state.dart';
 import 'package:geaux_snow/profile/profile_list.dart';
 import 'package:geaux_snow/profile/profile_picture.dart';
 import 'package:geaux_snow/profile/user_name_email.dart';
@@ -10,7 +10,7 @@ class ProfilePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final user = context.watch<AppState>().user;
+    final user = context.watch<LoggedInUserProvider>().user;
 
     return Scaffold(
       appBar: AppBar(
