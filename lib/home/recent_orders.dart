@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:geaux_snow/models/order.dart';
+import 'package:intl/intl.dart';
 
 class RecentOrders extends StatefulWidget {
   const RecentOrders({super.key});
@@ -62,6 +63,9 @@ class _RecentOrdersState extends State<RecentOrders> {
               final product = order.products?.isNotEmpty == true
                   ? order.products!.first
                   : null;
+              final formattedPurchaseDate = DateFormat(
+                'MMM d, y',
+              ).format(order.createdAt);
               return Container(
                 width: MediaQuery.of(context).size.width - 32,
                 decoration: BoxDecoration(
@@ -88,15 +92,15 @@ class _RecentOrdersState extends State<RecentOrders> {
                               vertical: 4,
                             ),
                             decoration: BoxDecoration(
-                              color: Colors.blueGrey.shade50,
+                              color: Colors.red,
                               borderRadius: BorderRadius.circular(8),
                             ),
                             child: Text(
-                              order.createdAt.toString().split(' ')[0],
+                              formattedPurchaseDate,
                               style: const TextStyle(
                                 fontSize: 14,
-                                color: Colors.blueGrey,
-                                fontWeight: FontWeight.w600,
+                                color: Colors.white,
+                                fontWeight: FontWeight.w900,
                               ),
                             ),
                           ),
@@ -140,7 +144,6 @@ class _RecentOrdersState extends State<RecentOrders> {
                           style: TextStyle(
                             color: Colors.blue.shade700,
                             fontWeight: FontWeight.bold,
-                            decoration: TextDecoration.underline,
                           ),
                         ),
                       ),
