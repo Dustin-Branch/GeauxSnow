@@ -44,11 +44,7 @@ class _RecentOrdersState extends State<RecentOrders> {
           padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8),
           child: Text(
             'Recent Orders',
-            style: TextStyle(
-              fontSize: 22,
-              fontWeight: FontWeight.bold,
-              color: Colors.blueGrey,
-            ),
+            style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
           ),
         ),
         SizedBox(

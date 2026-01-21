@@ -48,7 +48,6 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.white,
         centerTitle: true,
         title: Consumer<SelectedStandProvider>(
           builder: (context, value, child) {
@@ -93,11 +92,7 @@ class _HomePageState extends State<HomePage> {
                 padding: const EdgeInsets.only(left: 12, top: 12, bottom: 8),
                 child: Text(
                   'Hello, ${value.user?.name ?? 'Guest'}!',
-                  style: TextStyle(
-                    color: Colors.red,
-                    fontSize: 24,
-                    fontWeight: FontWeight.bold,
-                  ),
+                  style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
                 ),
               ),
             ),
