@@ -91,7 +91,14 @@ class _HomePageState extends State<HomePage> {
             Consumer<LoggedInUserProvider>(
               builder: (context, value, child) => Padding(
                 padding: const EdgeInsets.only(left: 12, top: 12, bottom: 8),
-                child: Text('Hello, ${value.user?.name ?? 'Guest'}!'),
+                child: Text(
+                  'Hello, ${value.user?.name ?? 'Guest'}!',
+                  style: TextStyle(
+                    color: Colors.red,
+                    fontSize: 24,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
               ),
             ),
             const RecentOrders(),
