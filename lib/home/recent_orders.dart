@@ -44,7 +44,7 @@ class _RecentOrdersState extends State<RecentOrders> {
           padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8),
           child: Text(
             'Recent Orders',
-            style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
+            style: Theme.of(context).textTheme.headlineMedium,
           ),
         ),
         SizedBox(
@@ -126,6 +126,7 @@ class _RecentOrdersState extends State<RecentOrders> {
                                 style: const TextStyle(
                                   fontSize: 18,
                                   fontWeight: FontWeight.bold,
+                                  color: Colors.black87,
                                 ),
                                 overflow: TextOverflow.ellipsis,
                               ),

@@ -36,12 +36,24 @@ ThemeData getThemeDataForStand(int? standId) {
           ),
         ),
         textTheme: TextTheme(
-          headlineMedium: TextStyle(
-            fontSize: 22,
+          headlineLarge: TextStyle(
+            fontSize: 28,
             fontWeight: FontWeight.bold,
             color: Colors.blue.shade900,
           ),
-          bodyMedium: TextStyle(fontSize: 16, color: Colors.blue.shade800),
+          headlineMedium: TextStyle(
+            fontSize: 24,
+            fontWeight: FontWeight.w700,
+            color: Colors.blue.shade800,
+          ),
+          headlineSmall: TextStyle(
+            fontSize: 18,
+            fontWeight: FontWeight.w600,
+            color: Colors.orange.shade700,
+          ),
+          bodyLarge: TextStyle(fontSize: 18, color: Colors.blue.shade800),
+          bodyMedium: TextStyle(fontSize: 16, color: Colors.blue.shade600),
+          bodySmall: TextStyle(fontSize: 14, color: Colors.blue.shade400),
         ),
       );
     case 2:
@@ -57,12 +69,24 @@ ThemeData getThemeDataForStand(int? standId) {
           ),
         ),
         textTheme: TextTheme(
-          headlineMedium: TextStyle(
-            fontSize: 22,
+          headlineLarge: TextStyle(
+            fontSize: 28,
             fontWeight: FontWeight.bold,
             color: Colors.green.shade900,
           ),
-          bodyMedium: TextStyle(fontSize: 16, color: Colors.green.shade800),
+          headlineMedium: TextStyle(
+            fontSize: 24,
+            fontWeight: FontWeight.w700,
+            color: Colors.green.shade800,
+          ),
+          headlineSmall: TextStyle(
+            fontSize: 18,
+            fontWeight: FontWeight.w600,
+            color: Colors.pink.shade700,
+          ),
+          bodyLarge: TextStyle(fontSize: 18, color: Colors.green.shade800),
+          bodyMedium: TextStyle(fontSize: 16, color: Colors.green.shade600),
+          bodySmall: TextStyle(fontSize: 14, color: Colors.green.shade400),
         ),
       );
     case 3:
@@ -78,12 +102,24 @@ ThemeData getThemeDataForStand(int? standId) {
           ),
         ),
         textTheme: TextTheme(
-          headlineMedium: TextStyle(
-            fontSize: 22,
+          headlineLarge: TextStyle(
+            fontSize: 28,
             fontWeight: FontWeight.bold,
             color: Colors.purple.shade900,
           ),
-          bodyMedium: TextStyle(fontSize: 16, color: Colors.purple.shade800),
+          headlineMedium: TextStyle(
+            fontSize: 24,
+            fontWeight: FontWeight.w700,
+            color: Colors.purple.shade800,
+          ),
+          headlineSmall: TextStyle(
+            fontSize: 18,
+            fontWeight: FontWeight.w600,
+            color: Colors.yellow.shade800,
+          ),
+          bodyLarge: TextStyle(fontSize: 18, color: Colors.purple.shade800),
+          bodyMedium: TextStyle(fontSize: 16, color: Colors.purple.shade600),
+          bodySmall: TextStyle(fontSize: 14, color: Colors.purple.shade400),
         ),
       );
     case 4:
@@ -99,12 +135,24 @@ ThemeData getThemeDataForStand(int? standId) {
           ),
         ),
         textTheme: TextTheme(
-          headlineMedium: TextStyle(
-            fontSize: 22,
+          headlineLarge: TextStyle(
+            fontSize: 28,
             fontWeight: FontWeight.bold,
             color: Colors.red.shade900,
           ),
-          bodyMedium: TextStyle(fontSize: 16, color: Colors.red.shade800),
+          headlineMedium: TextStyle(
+            fontSize: 24,
+            fontWeight: FontWeight.w700,
+            color: Colors.red.shade800,
+          ),
+          headlineSmall: TextStyle(
+            fontSize: 18,
+            fontWeight: FontWeight.w600,
+            color: Colors.teal.shade700,
+          ),
+          bodyLarge: TextStyle(fontSize: 18, color: Colors.red.shade800),
+          bodyMedium: TextStyle(fontSize: 16, color: Colors.red.shade600),
+          bodySmall: TextStyle(fontSize: 14, color: Colors.red.shade400),
         ),
       );
     case 5:
@@ -120,15 +168,27 @@ ThemeData getThemeDataForStand(int? standId) {
           ),
         ),
         textTheme: TextTheme(
-          headlineMedium: TextStyle(
-            fontSize: 22,
+          headlineLarge: TextStyle(
+            fontSize: 28,
             fontWeight: FontWeight.bold,
             color: Colors.deepOrange.shade900,
           ),
-          bodyMedium: TextStyle(
-            fontSize: 16,
+          headlineMedium: TextStyle(
+            fontSize: 24,
+            fontWeight: FontWeight.w700,
             color: Colors.deepOrange.shade800,
           ),
+          headlineSmall: TextStyle(
+            fontSize: 18,
+            fontWeight: FontWeight.w600,
+            color: Colors.indigo.shade700,
+          ),
+          bodyLarge: TextStyle(fontSize: 18, color: Colors.deepOrange.shade800),
+          bodyMedium: TextStyle(
+            fontSize: 16,
+            color: Colors.deepOrange.shade600,
+          ),
+          bodySmall: TextStyle(fontSize: 14, color: Colors.deepOrange.shade400),
         ),
       );
     default:
@@ -144,12 +204,24 @@ ThemeData getThemeDataForStand(int? standId) {
           ),
         ),
         textTheme: TextTheme(
-          headlineMedium: TextStyle(
-            fontSize: 22,
+          headlineLarge: TextStyle(
+            fontSize: 28,
             fontWeight: FontWeight.bold,
             color: Colors.black87,
           ),
+          headlineMedium: TextStyle(
+            fontSize: 24,
+            fontWeight: FontWeight.w700,
+            color: Colors.black54,
+          ),
+          headlineSmall: TextStyle(
+            fontSize: 18,
+            fontWeight: FontWeight.w600,
+            color: Colors.blueGrey,
+          ),
+          bodyLarge: TextStyle(fontSize: 18, color: Colors.black87),
           bodyMedium: TextStyle(fontSize: 16, color: Colors.black54),
+          bodySmall: TextStyle(fontSize: 14, color: Colors.grey),
         ),
       );
   }

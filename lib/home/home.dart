@@ -80,6 +80,7 @@ class _HomePageState extends State<HomePage> {
             icon: const Icon(Icons.person),
             tooltip: 'Profile',
             onPressed: _openProfilePage,
+            color: Colors.white,
           ),
         ],
       ),
@@ -92,7 +93,7 @@ class _HomePageState extends State<HomePage> {
                 padding: const EdgeInsets.only(left: 12, top: 12, bottom: 8),
                 child: Text(
                   'Hello, ${value.user?.name ?? 'Guest'}!',
-                  style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+                  style: Theme.of(context).textTheme.headlineLarge,
                 ),
               ),
             ),
