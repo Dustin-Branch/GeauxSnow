@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:geaux_snow/home/home.dart';
 import 'package:geaux_snow/models/stand.dart';
+import 'package:geaux_snow/models/stand_theme.dart';
 import 'package:geaux_snow/models/user.dart';
 import 'package:provider/provider.dart';
 
@@ -29,11 +30,12 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final selectedStand = context.watch<SelectedStandProvider>().selectedStand;
+    final theme = getThemeDataForStand(selectedStand?.id);
+
     return MaterialApp(
       title: 'Geaux Snow',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.white),
-      ),
+      theme: theme,
       home: const HomePage(title: 'Home'),
     );
   }
