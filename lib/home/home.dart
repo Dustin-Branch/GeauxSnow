@@ -48,7 +48,6 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.white,
         centerTitle: true,
         title: Consumer<SelectedStandProvider>(
           builder: (context, value, child) {
@@ -81,6 +80,7 @@ class _HomePageState extends State<HomePage> {
             icon: const Icon(Icons.person),
             tooltip: 'Profile',
             onPressed: _openProfilePage,
+            color: Colors.white,
           ),
         ],
       ),
@@ -91,7 +91,10 @@ class _HomePageState extends State<HomePage> {
             Consumer<LoggedInUserProvider>(
               builder: (context, value, child) => Padding(
                 padding: const EdgeInsets.only(left: 12, top: 12, bottom: 8),
-                child: Text('Hello, ${value.user?.name ?? 'Guest'}!'),
+                child: Text(
+                  'Hello, ${value.user?.name ?? 'Guest'}!',
+                  style: Theme.of(context).textTheme.headlineLarge,
+                ),
               ),
             ),
             const RecentOrders(),
