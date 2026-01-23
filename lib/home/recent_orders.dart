@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:geaux_snow/home/recent_oder.dart';
 import 'package:geaux_snow/models/order.dart';
+import 'package:geaux_snow/models/product.dart';
 import 'package:geaux_snow/shared/horizontal_list_view.dart';
 
 class RecentOrders extends StatefulWidget {
@@ -51,13 +52,6 @@ class _RecentOrdersState extends State<RecentOrders> {
         HorizontalListView<OrderDto>(
           items: _orders,
           itemBuilder: (context, order) => RecentOrder(order: order),
-        ),
-        Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8),
-          child: Text(
-            'Top Picks',
-            style: Theme.of(context).textTheme.headlineMedium,
-          ),
         ),
       ],
     );
