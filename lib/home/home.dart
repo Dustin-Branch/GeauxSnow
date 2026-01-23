@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:geaux_snow/models/address.dart';
 import 'package:geaux_snow/models/stand.dart';
 import 'package:geaux_snow/models/user.dart';
 import 'package:provider/provider.dart';
@@ -21,11 +22,57 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   //TODO: dummy stands - replace with data fetching
   final List<StandDto> _dummyStands = [
-    StandDto(id: 1, name: 'Downtown Stand'),
-    StandDto(id: 2, name: 'Mall Stand'),
-    StandDto(id: 3, name: 'Park Stand'),
-    StandDto(id: 4, name: 'University Stand'),
-    StandDto(id: 5, name: 'Stadium Stand'),
+    StandDto(
+      id: 1,
+      name: 'Downtown Stand',
+      address: AddressDto(
+        street1: '120 S. Cypress St.',
+        street2: '1',
+        city: 'Hammond',
+        state: 'LA',
+        zipCode: '70403',
+      ),
+    ),
+    StandDto(
+      id: 2,
+      name: 'Mall Stand',
+      address: AddressDto(
+        street1: '2030 Hammond Square Dr.',
+        city: 'Hammond',
+        state: 'LA',
+        zipCode: '70403',
+      ),
+    ),
+    StandDto(
+      id: 3,
+      name: 'Park Stand',
+      address: AddressDto(
+        street1: '400 S. Oak St.',
+        city: 'Hammond',
+        state: 'LA',
+        zipCode: '70403',
+      ),
+    ),
+    StandDto(
+      id: 4,
+      name: 'University Stand',
+      address: AddressDto(
+        street1: '500 W. University Ave.',
+        city: 'Hammond',
+        state: 'LA',
+        zipCode: '70402',
+      ),
+    ),
+    StandDto(
+      id: 5,
+      name: 'Stadium Stand',
+      address: AddressDto(
+        street1: 'Ned McGehee Dr.',
+        city: 'Hammond',
+        state: 'LA',
+        zipCode: '70401',
+      ),
+    ),
   ];
 
   void _openProfilePage() {

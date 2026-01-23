@@ -15,11 +15,14 @@ class SelectStand extends StatefulWidget {
 class _SelectStandState extends State<SelectStand> {
   late GoogleMapController mapController;
 
-  final LatLng _center = const LatLng(30.4515, -90.4848); // Hammond, LA
+  // initial position over Hammond, LA
+  final LatLng _center = const LatLng(30.4515, -90.4848);
 
   void _onMapCreated(GoogleMapController controller) {
     mapController = controller;
   }
+
+  //TODO: add the geocoding package to convert addresses to lat/lng and display markers on the map
 
   @override
   Widget build(BuildContext context) {
