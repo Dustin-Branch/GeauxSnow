@@ -11,6 +11,9 @@
 .svn/
 .swiftpm/
 migrate_working_dir/
+*.env
+.env
+ios/Flutter/Config.xcconfig
 
 # IntelliJ related
 *.iml
