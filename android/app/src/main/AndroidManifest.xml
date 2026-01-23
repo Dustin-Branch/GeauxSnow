@@ -3,6 +3,10 @@
         android:label="geaux_snow"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
+
+        <meta-data android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyD_y423Zc8tzp2_y6w_MMj3UuZxTwvX3uk"/>
+
         <activity
             android:name=".MainActivity"
             android:exported="true"

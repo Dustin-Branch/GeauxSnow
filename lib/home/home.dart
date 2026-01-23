@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:geaux_snow/models/stand.dart';
 import 'package:geaux_snow/models/user.dart';
-import 'package:geaux_snow/models/product.dart';
 import 'package:provider/provider.dart';
 
 import 'recent_orders.dart';
 import 'top_picks.dart';
-import '../shared/horizontal_list_view.dart';
 
 import '../profile/profile.dart';
 import 'select_stand.dart';
